@@ -1,73 +1,38 @@
 # 🔐 Secure File Sharing System
 
 ## 📌 Overview
-This project is a **Secure File Sharing System** developed as part of **Cyber Security Task 3** under the **Future Interns Internship Program**.  
-The application allows users to securely upload and download files by using **AES (Advanced Encryption Standard)** to protect data from unauthorized access.
-
----
+A **secure file upload/download system** using **AES encryption**, developed for **Cyber Security Task 3 – Future Interns Internship Program**. Files are encrypted before storage and decrypted only during download, ensuring data confidentiality.
 
 ## 🎯 Objective
-- To build a secure file upload and download system
-- To encrypt files before storing them on the server
-- To decrypt files safely during download
-- To demonstrate basic cryptography and key management concepts
+- Encrypt files before upload  
+- Securely store and manage files  
+- Decrypt files during download  
+- Demonstrate cryptography and key management  
 
----
-
-## 🛠️ Technologies Used
-- Python  
-- Flask  
-- PyCryptodome (AES Encryption)  
-- HTML  
-- Git & GitHub  
-
----
+## 🛠️ Technologies
+- Python, Flask  
+- PyCryptodome (AES)  
+- HTML, Git & GitHub  
 
 ## 🔐 AES Encryption
-AES (Advanced Encryption Standard) is a **symmetric encryption algorithm** widely used for securing sensitive data.
+- Symmetric encryption (AES-128)  
+- Files unreadable without the secret key  
+- Decryption only during download  
 
-In this project:
-- **AES-128 encryption** is used
-- Files are encrypted before being stored
-- Encrypted files are unreadable without the secret key
-- Decryption happens only during file download
-
-This ensures **data confidentiality and integrity**.
-
----
-
-## 📂 File Upload and Download Process
-
-### File Upload
-- User selects a file through the web interface
-- File data is encrypted using AES
-- Encrypted file is saved in the server storage
-
-### File Download
-- Encrypted file is retrieved from storage
-- File is decrypted using the AES key
-- Original file is delivered to the user
-
----
+## 📂 Workflow
+**Upload:** User → AES encryption → Stored in `uploads/`  
+**Download:** Retrieve file → AES decryption → Delivered to user  
 
 ## 🔑 Key Management
-- AES secret key is generated using a separate script
-- The key is stored securely in a file named `key.key`
-- The key is not hardcoded in the source code
-- The same key is used for encryption and decryption
-
-Proper key management helps maintain system security.
-
----
+- Key generated via `generate_key.py`  
+- Stored securely in `key.key`  
+- Not hardcoded in source code  
 
 ## 🛡️ Security Measures
-- AES encryption for all stored files
-- Encrypted files cannot be opened directly
-- Secure storage of encryption key
-- Decryption only during authorized download
-- Clear separation between key generation and encryption logic
-
----
+- AES encryption for all files  
+- Encrypted files unreadable directly  
+- Secure key storage  
+- Decryption only during authorized access  
 
 ## 📁 Project Structure
 secure-file-sharing/
@@ -77,25 +42,11 @@ secure-file-sharing/
 ├── uploads/
 ├── templates/
 │ └── index.html
-└── static/
 
----
+## ✅ Testing
+- Encrypted files unreadable  
+- Decrypted files match originals  
+- Key file stored securely  
 
-## Testing and Validation
-- Encrypted files appear unreadable when accessed directly
-- Decrypted files match the original files
-- Encryption logic verified using AES module
-- Key file contains unreadable binary data
 
----
 
-## 🎓 Conclusion
-This project demonstrates how **cryptography can be applied to real-world applications** to secure file sharing.  
-By implementing AES encryption and proper key handling, the system ensures secure and reliable data protection.
-
----
-
-## 👤 Author
-Name: *Noorjahan*  
-Internship: **Future Interns – Cyber Security**  
-Task: **Secure File Sharing System**
